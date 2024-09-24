@@ -1,0 +1,14 @@
+Tag Counts:
+Tag,Count
+Untagged,6
+sv_P4,1
+
+Port/Protocol Combination Counts:
+Port,Protocol,Count
+22,tcp,1
+80,tcp,1
+49153,tcp,1
+49155,tcp,1
+49156,tcp,1
+49157,tcp,1
+49158,tcp,1

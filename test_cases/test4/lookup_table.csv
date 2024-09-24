@@ -1,0 +1,6 @@
+﻿dstport,protocol,tag
+443,tcp,sv_P2
+25,tcp,sv_P1
+110,tcp,email
+143,tcp,email
+993,tcp,email
