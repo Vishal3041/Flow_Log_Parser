@@ -17,12 +17,13 @@ A Python tool to parse AWS VPC flow logs and tag entries based on port and proto
 
 ## Assumptions
 1. **Port 22 (SSH)** is **always open** and tagged as `sv_P4` even if it is not explicitly logged.
-2. All ports **not found in the lookup table** are tagged as **Untagged**.
-3. Flow logs with a status of **REJECT** are tagged as **Untagged** but are **still included** in the port/protocol combination counts.
+2. All ports **not found in the lookup table** are considered as **Untagged**.
+3. Flow logs with a status of **REJECT** are considered as **Untagged** but are **still included** in the port/protocol combination counts and tags count.
 4. The lookup table provides the correct mappings for destination ports and protocols.
 5. Log format strictly follows AWS VPC flow log **version 2** structure.
 6. The script handles **TCP (6)**, **UDP (17)**, and **ICMP (1)** protocols.
-
+7. The given output is incorrect as it gives **Untagged,9** which should be **8 counts** also since there are only 14 log entries and considering 22 being default the total should be 15 but in output it is 16 (hence incorrect).
+8. Also I'm getting extra output for ports **49153, 49154, 49154, 49156, 49157** which is not given in the original output. So I assumed that **all the empheral ports should be considered** in the Port/Protocol Counts since they are considered in Tags Count. Hence included all of them. Another assumption that can be made is that **we can exclude all the ephemeral ports** in that case the port **49158 will not be included** in the Port/Protocol Counts.
 ---
 
 ## Features
