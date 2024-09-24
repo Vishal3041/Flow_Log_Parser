@@ -81,3 +81,12 @@ python3 run_tests.py
 ```
 - The script will iterate through all test cases in the tests/ directory, generate the actual output, and compare it to the expected output.
 
+## Installation
+- Clone the repository:
+
+```bash
+git clone https://github.com/your-username/FlowLogAnalyzer.git
+cd FlowLogAnalyzer
+```
+- Install dependencies (if any). Currently, the script uses only Python's built-in libraries, so no additional packages are required.
+- Run the parser or tests as described in the Usage section.
