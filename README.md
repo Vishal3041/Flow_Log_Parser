@@ -39,6 +39,9 @@ We include a set of test cases in the `tests/` directory. These cover a range of
 - REJECT logs and handling untagged entries.
 - Logs with multiple protocols (TCP, UDP, ICMP).
 - Edge cases with no matching entries in the lookup table.
+- lookup_table.csv: The port-to-tag mappings.
+- flow_logs.txt: The flow log entries.
+- expected_output.txt: The expected output for comparison.
 
 ### Known Issues:
 1. **Incorrect Output in Existing Test Case**: In one test case, port `22` is included in the expected output, but it is missing in the flow logs. This has been manually corrected by including port `22` by default.
@@ -46,6 +49,9 @@ We include a set of test cases in the `tests/` directory. These cover a range of
 3. **REJECT Entries**: REJECT logs are tagged as **Untagged** but still included in port/protocol combination counts.
 
 ---
+
+
+Test Case Directory Structure:
 
 ## Usage
 ### 1. Command-Line Usage
