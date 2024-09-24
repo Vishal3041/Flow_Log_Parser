@@ -58,6 +58,7 @@ Test Case Directory Structure:
 ### 1. Command-Line Usage
 ```bash
 python3 flow_logs_parser.py <lookup_table.csv> <flow_logs.txt> <output.txt>
+```
 
 - lookup_table.csv: The CSV file containing dstport, protocol, and tag mappings.
 - flow_logs.txt: The file containing flow logs (AWS VPC Flow Logs, version 2).
@@ -69,6 +70,7 @@ To run a specific test case:
 
 ```bash
 python3 flow_logs_parser.py tests/test_case_1/lookup_table.csv tests/test_case_1/flow_logs.txt tests/test_case_1/actual_output.txt
+```
 - Then, compare actual_output.txt to expected_output.txt.
 
 ### Running All Test Cases at Once
@@ -76,5 +78,6 @@ python3 flow_logs_parser.py tests/test_case_1/lookup_table.csv tests/test_case_1
 
 ```bash
 python3 run_tests.py
+```
 - The script will iterate through all test cases in the tests/ directory, generate the actual output, and compare it to the expected output.
 
