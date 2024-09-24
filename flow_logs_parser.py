@@ -101,7 +101,7 @@ def main():
     save_results(output_file, tag_counts, port_protocol_counts)
 
     # if want to run the test case for each file without giving the file paths in the terminal and giving the paths in the code itself replace this below line of code for the above lines
-    ```
+    '''
     lookup_file = 'lookup_table.csv'  # Path to the lookup table
     flow_log_file = 'flow_logs.txt'   # Path to the flow log file
     output_file = 'output.txt'        # Path to the output file
@@ -114,7 +114,7 @@ def main():
     
     # Save results to the output file
     save_results(output_file, tag_counts, port_protocol_counts)
-    ```
+    '''
 
 if __name__ == "__main__":
     main()
