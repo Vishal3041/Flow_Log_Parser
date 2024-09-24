@@ -67,9 +67,9 @@ python3 flow_logs_parser.py <lookup_table.csv> <flow_logs.txt> <output.txt>
 To run a specific test case:
 
 ```bash
-python3 flow_logs_parser.py tests/test_case_1/lookup_table.csv tests/test_case_1/flow_logs.txt tests/test_case_1/actual_output.txt
+python3 flow_logs_parser.py tests/test_case_1/lookup_table.csv tests/test_case_1/flow_logs.txt tests/test_case_1/output.txt
 ```
-- Then, compare actual_output.txt to expected_output.txt.
+- Then, compare output.txt to expected_output.txt.
 
 ### Running All Test Cases at Once
 - You can run all the test cases by using the provided test runner script (run_tests.py):
