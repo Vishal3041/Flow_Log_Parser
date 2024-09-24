@@ -24,6 +24,7 @@ A Python tool to parse AWS VPC flow logs and tag entries based on port and proto
 6. The script handles **TCP (6)**, **UDP (17)**, and **ICMP (1)** protocols.
 7. The given output is incorrect as it gives **Untagged,9** which should be **8 counts** also since there are only 14 log entries and considering 22 being default the total should be 15 but in output it is 16 (hence incorrect).
 8. Also I'm getting extra output for ports **49153, 49154, 49154, 49156, 49157** which is not given in the original output. So I assumed that **all the empheral ports should be considered** in the Port/Protocol Counts since they are considered in Tags Count. Hence included all of them. Another assumption that can be made is that **we can exclude all the ephemeral ports** in that case the port **49158 will not be included** in the Port/Protocol Counts.
+9. Included 7 test_cases out of which test5 is only failing since it is the original test_case included in the mail rest all are passing (assuming that the test case output is incomplete or incorrect).
 ---
 
 ## Features
@@ -35,7 +36,7 @@ A Python tool to parse AWS VPC flow logs and tag entries based on port and proto
 ---
 
 ## Test Cases
-We include a set of test cases in the `tests/` directory. These cover a range of scenarios including:
+Included a set of test cases in the `tests/` directory. These cover a range of scenarios including:
 - Basic flow logs with well-known ports (e.g., 25, 80, 443).
 - REJECT logs and handling untagged entries.
 - Logs with multiple protocols (TCP, UDP, ICMP).
@@ -43,6 +44,7 @@ We include a set of test cases in the `tests/` directory. These cover a range of
 - lookup_table.csv: The port-to-tag mappings.
 - flow_logs.txt: The flow log entries.
 - expected_output.txt: The expected output for comparison.
+- output.txt: The actual output of the test case.
 
 ### Known Issues:
 1. **Incorrect Output in Existing Test Case**: In one test case, port `22` is included in the expected output, but it is missing in the flow logs. This has been manually corrected by including port `22` by default.
@@ -51,16 +53,11 @@ We include a set of test cases in the `tests/` directory. These cover a range of
 
 ---
 
-
-Test Case Directory Structure:
-
-
 ## Usage
 ### 1. Command-Line Usage
 ```bash
 python3 flow_logs_parser.py <lookup_table.csv> <flow_logs.txt> <output.txt>
 ```
-
 - lookup_table.csv: The CSV file containing dstport, protocol, and tag mappings.
 - flow_logs.txt: The file containing flow logs (AWS VPC Flow Logs, version 2).
 - output.txt: The output file where results will be written.
@@ -89,5 +86,5 @@ python3 run_tests.py
 git clone https://github.com/Vishal3041/Flow_Log_Parser.git
 cd FlowLogParser
 ```
-- Install dependencies (if any). Currently, the script uses only Python's built-in libraries, so no additional packages are required.
+- Currently, the script uses only Python's built-in libraries, so no additional packages are required.
 - Run the parser or tests as described in the Usage section.
