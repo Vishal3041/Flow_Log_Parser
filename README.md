@@ -1,4 +1,4 @@
-# FlowLogAnalyzer
+# FlowLogParser
 
 A Python tool to parse AWS VPC flow logs and tag entries based on port and protocol combinations from a lookup table. This project supports processing TCP, UDP, and ICMP protocols, tagging each log entry based on predefined rules, and generating a summary of tag counts and port/protocol combination counts.
 
@@ -85,8 +85,8 @@ python3 run_tests.py
 - Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/FlowLogAnalyzer.git
-cd FlowLogAnalyzer
+git clone https://github.com/Vishal3041/Flow_Log_Parser.git
+cd FlowLogParser
 ```
 - Install dependencies (if any). Currently, the script uses only Python's built-in libraries, so no additional packages are required.
 - Run the parser or tests as described in the Usage section.
